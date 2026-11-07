@@ -26,7 +26,7 @@ jobs:
           java-version: 25
 
       # Caches Gradle dependencies and build outputs between runs
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v6
 
       # The TMDB token is not needed: tests use fakes and the app builds with an empty token
 
