@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="watchlist_title">Minha lista</string>
+    <string name="watchlist_empty">Sua lista está vazia.\nToque em “Quero assistir” na página de um filme para adicioná-lo aqui.</string>
+    <string name="watchlist_to_watch">Para assistir (%1$d)</string>
+    <string name="watchlist_watched">Assistidos (%1$d)</string>
+    <string name="watchlist_mark_watched">Marcar como assistido</string>
+    <string name="watchlist_mark_unwatched">Marcar como não assistido</string>
+    <string name="watchlist_remove">Remover da lista</string>
+    <string name="watchlist_removed">“%1$s” removido da lista</string>
+    <string name="watchlist_undo">Desfazer</string>
+</resources>

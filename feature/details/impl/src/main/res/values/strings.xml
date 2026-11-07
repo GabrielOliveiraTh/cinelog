@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="details_overview">Sinopse</string>
+    <string name="details_overview_unavailable">Sinopse indisponível.</string>
+    <string name="details_cast">Elenco</string>
+    <string name="details_error">Não foi possível carregar este filme. Verifique sua conexão.</string>
+    <string name="details_partial_error">Não foi possível carregar o elenco e os demais detalhes.</string>
+    <string name="details_add_to_watchlist">Quero assistir</string>
+    <string name="details_in_watchlist">Na minha lista</string>
+    <string name="details_mark_watched">Marcar como assistido</string>
+    <string name="details_watched">Assistido</string>
+</resources>

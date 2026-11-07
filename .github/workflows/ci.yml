@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A new push to the same branch cancels the run that is still going
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Lint, tests and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Same JDK the project's Gradle daemon asks for (gradle/gradle-daemon-jvm.properties)
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+
+      # Caches Gradle dependencies and build outputs between runs
+      - uses: gradle/actions/setup-gradle@v4
+
+      # The TMDB token is not needed: tests use fakes and the app builds with an empty token
+
+      - name: Code style (ktlint)
+        run: ./gradlew spotlessCheck
+
+      - name: Static analysis (detekt)
+        run: ./gradlew detekt
+
+      - name: Android Lint
+        run: ./gradlew lintDebug
+
+      - name: Unit tests
+        run: ./gradlew testDebugUnitTest
+
+      - name: Build app and instrumented test APKs
+        run: ./gradlew assembleDebug assembleDebugAndroidTest
+
+      - name: Upload reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: '**/build/reports/'
+          retention-days: 7

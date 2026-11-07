@@ -1,0 +1,31 @@
+# Only the differences from detekt's defaults (buildUponDefaultConfig = true).
+# Each override says why: the defaults target plain Kotlin, and Compose has its own conventions.
+
+naming:
+  FunctionNaming:
+    # Composables are named like types: MovieCard(), not movieCard()
+    ignoreAnnotated: ['Composable']
+
+complexity:
+  LongParameterList:
+    # Stateless composables take their state and callbacks as parameters by design
+    ignoreAnnotated: ['Composable']
+  LongMethod:
+    ignoreAnnotated: ['Composable']
+  TooManyFunctions:
+    # A screen split into small private composables is good Compose structure; count the public API only
+    ignorePrivate: true
+
+style:
+  MagicNumber:
+    # Sizes and ratios in UI code (16.dp, 2f / 3f) read better inline
+    ignoreAnnotated: ['Composable', 'Preview']
+  UnusedPrivateFunction:
+    # @Preview functions are called by the IDE, not by code
+    ignoreAnnotated: ['Preview']
+  MaxLineLength:
+    # Same limit as ktlint (.editorconfig)
+    maxLineLength: 120
+  ReturnCount:
+    # Early returns (`?: return`) at the top of a function are idiomatic Kotlin
+    excludeGuardClauses: true

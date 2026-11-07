@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sync_releases_channel_name">Estreias</string>
+    <string name="sync_releases_channel_description">Avisa quando um filme da sua lista estreia.</string>
+    <string name="sync_release_title">Estreou: %1$s</string>
+    <string name="sync_release_text">Um filme da sua lista acabou de estrear.</string>
+</resources>

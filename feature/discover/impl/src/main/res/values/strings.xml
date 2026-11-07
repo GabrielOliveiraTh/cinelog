@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="discover_title">Populares</string>
+    <string name="discover_empty">Nenhum filme por aqui ainda.</string>
+    <string name="discover_error">Não foi possível carregar os filmes. Verifique sua conexão.</string>
+    <string name="discover_search">Buscar filmes</string>
+    <string name="discover_refresh_error">Sem conexão. Mostrando filmes salvos.</string>
+</resources>

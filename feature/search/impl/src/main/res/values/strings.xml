@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_placeholder">Buscar filmes</string>
+    <string name="search_clear">Limpar busca</string>
+    <string name="search_hint">Digite pelo menos 2 letras para buscar.</string>
+    <string name="search_no_results">Nenhum filme encontrado para “%1$s”.</string>
+    <string name="search_error">Não foi possível buscar. Verifique sua conexão.</string>
+</resources>
